@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "perro",
+    "apellido": "rr",
+    "tipoDocumento": "cc",
+    "numeroDocumento": 11333333,
+    "correo": "wr@gmai.com",
+    "telefono": "3023826662",
+    "tipoSangre": "o+",
+    "id": 1
+  },
+  {
+    "nombre": "gato",
+    "apellido": "rr",
+    "tipoDocumento": "cc",
+    "numeroDocumento": 11333333,
+    "correo": "wr@gmai.com",
+    "telefono": "3023826662",
+    "tipoSangre": "o+",
+    "id": 2
+  },
+  {
+    "nombre": "rulos",
+    "apellido": "rr",
+    "tipoDocumento": "cc",
+    "numeroDocumento": 11333333,
+    "correo": "wr@gmai.com",
+    "telefono": "3023826662",
+    "tipoSangre": "o+",
+    "id": 3
+  },
+  {
+    "nombre": "caraballo",
+    "apellido": "r<r",
+    "tipoDocumento": "cc",
+    "numeroDocumento": 11333333,
+    "correo": "wr@gmai.com",
+    "telefono": "3023826662",
+    "tipoSangre": "o+",
+    "id": 4
+  }
+]
