@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
@@ -25,15 +26,9 @@ public class Estudios {
     private String institucion;
     @Column
     private String titulo;
-
-    public Estudios(Long id, Long anio, String mes, String estudio, String institucion, String titulo) {
-        this.id = id;
-        this.anio = anio;
-        this.mes = mes;
-        this.estudio = estudio;
-        this.institucion = institucion;
-        this.titulo = titulo;
-    }
+    @Column
+    @ManyToOne
+    private  Long idEmpleado;
 
     public Long getId() {
         return id;
@@ -81,5 +76,23 @@ public class Estudios {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public Long getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public void setIdEmpleado(Long idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
+
+    public Estudios(Long id, Long anio, String mes, String estudio, String institucion, String titulo, Long idEmpleado) {
+        this.id = id;
+        this.anio = anio;
+        this.mes = mes;
+        this.estudio = estudio;
+        this.institucion = institucion;
+        this.titulo = titulo;
+        this.idEmpleado = idEmpleado;
     }
 }
