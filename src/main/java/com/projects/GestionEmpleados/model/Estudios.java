@@ -1,13 +1,9 @@
 package com.projects.GestionEmpleados.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+
+import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.web.WebProperties;
+
 
 @Entity
 @Table(name="Estudios")
@@ -26,9 +22,17 @@ public class Estudios {
     private String institucion;
     @Column
     private String titulo;
-    @Column
-    @ManyToOne
-    private  Long idEmpleado;
+
+
+    public Estudios(Long id, Long anio, String mes, String estudio, String institucion, String titulo, Empleado empleado) {
+        this.id = id;
+        this.anio = anio;
+        this.mes = mes;
+        this.estudio = estudio;
+        this.institucion = institucion;
+        this.titulo = titulo;
+
+    }
 
     public Long getId() {
         return id;
@@ -78,21 +82,5 @@ public class Estudios {
         this.titulo = titulo;
     }
 
-    public Long getIdEmpleado() {
-        return idEmpleado;
-    }
 
-    public void setIdEmpleado(Long idEmpleado) {
-        this.idEmpleado = idEmpleado;
-    }
-
-    public Estudios(Long id, Long anio, String mes, String estudio, String institucion, String titulo, Long idEmpleado) {
-        this.id = id;
-        this.anio = anio;
-        this.mes = mes;
-        this.estudio = estudio;
-        this.institucion = institucion;
-        this.titulo = titulo;
-        this.idEmpleado = idEmpleado;
-    }
 }

@@ -1,15 +1,13 @@
 package com.projects.GestionEmpleados.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="empleado")
 public class Empleado {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     @Column
     private String nombre;
@@ -25,10 +23,6 @@ public class Empleado {
     private String telefono;
     @Column
     private String tipoSangre;
-
-    public Empleado() {
-
-    }
 
     public Empleado(Long id, String nombre, String apellido, String tipoDocumento, int numeroDocumento, String correo, String telefono, String tipoSangre) {
         this.id = id;

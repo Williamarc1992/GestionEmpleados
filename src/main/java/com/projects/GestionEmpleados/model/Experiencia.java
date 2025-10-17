@@ -1,12 +1,6 @@
 package com.projects.GestionEmpleados.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="Experiencia")
@@ -29,9 +23,19 @@ public class Experiencia {
     private  String responsabilidades;
     @Column
     private  String logros;
-    @Column
-    @ManyToOne
-    private  Long idEmpleado;
+
+
+    public Experiencia(Long id, Long anio, String mes, String empresa, String jefe, String cargo, String responsabilidades, String logros, Empleado empleado) {
+        this.id = id;
+        this.anio = anio;
+        this.mes = mes;
+        this.empresa = empresa;
+        this.jefe = jefe;
+        this.cargo = cargo;
+        this.responsabilidades = responsabilidades;
+        this.logros = logros;
+
+    }
 
     public Long getId() {
         return id;
@@ -97,23 +101,5 @@ public class Experiencia {
         this.logros = logros;
     }
 
-    public Long getIdEmpleado() {
-        return idEmpleado;
-    }
 
-    public void setIdEmpleado(Long idEmpleado) {
-        this.idEmpleado = idEmpleado;
-    }
-
-    public Experiencia(Long id, Long anio, String mes, String empresa, String jefe, String cargo, String responsabilidades, String logros, Long idEmpleado) {
-        this.id = id;
-        this.anio = anio;
-        this.mes = mes;
-        this.empresa = empresa;
-        this.jefe = jefe;
-        this.cargo = cargo;
-        this.responsabilidades = responsabilidades;
-        this.logros = logros;
-        this.idEmpleado = idEmpleado;
-    }
 }
